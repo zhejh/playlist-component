@@ -1,8 +1,8 @@
 # Portfolio Part 6: Finishing Touches
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Zaid Hayat
+- **Dot Number**: Hayat.17
+- **Due Date**: 11/13/2026 @ 4:10
 
 ## Assignment Overview
 
@@ -50,7 +50,7 @@ course, but just knowing about them could set you up for long term success.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
+
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -141,7 +141,7 @@ to see them. If you don't like this workflow, you may try following the
 rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
+
 
 ## Assignment Tasks
 
@@ -307,18 +307,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I understand software development better now. At the start, I struggled with figuring out how many test cases I needed and understanding abstract classes. Working through the portfolio project helped me understand both through trial and error.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+Before starting, I felt like I had gaps even in the basics, especially writing test cases, understanding abstract classes and interfaces, and writing contracts. I worked on these by going through the code step by step, and fixing mistakes as I tested. Applying these ideas to my own component helped me understand how they fit together.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+I would say I’m still in a gray area. I don’t necessarily like software development, but I don’t hate it either. Honestly, the more I learn, the more questions I have. This project helped me understand some concepts, but it also showed me how much I still don’t know. It can feel overwhelming because there is always new information to take in.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -326,29 +326,31 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
-
+I developed my problem solving skills by figuring out what was wrong with my code and what the Checkstyle warnings meant. Fixing one issue only to have ten more appear definitely tested my patience. It helped me practice working through problems one at a time instead of trying to fix everything at once.
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Built a Java playlist component using interfaces, an abstract class, and a queue.
+- Tested component behavior with JUnit, including empty playlists and song ordering.
+- Debugged Java errors and resolved Checkstyle warnings to improve code quality.
+- Used GitHub Desktop to manage project files.
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+I chose a playlist because it seemed like the simplest project to complete with my current academic schedule. I don’t have much time to spare, so my choice was more about managing my workload than exploring a career interest.But I plan to try more projects on my own when I have free time.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I could keep building small projects when I have free time to practice testing, debugging, and organizing code. Trying different projects could also help me figure out what areas interest me. I could ask my professors, TAs, or more experienced students for feedback and advice on what to learn next.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
+
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
