@@ -5,6 +5,13 @@
  */
 public abstract class PlaylistSecondary implements Playlist {
 
+    /**
+     * Used 31 because it is a very common prime multiplier, to combine song
+     * hashes. Multiplying x by 31 is equivalent to (x << 5) - x. Multiplying
+     * before adding each hash makes song order matter.
+     */
+    private static final int HASH_MULTIPLIER = 31;
+
     @Override
     public final boolean isEmpty() {
         return this.size() == 0;
@@ -24,31 +31,50 @@ public abstract class PlaylistSecondary implements Playlist {
     public final void moveNextToEnd() {
         assert this.size() > 0 : "Violation of: this /= <>";
 
-        String song = this.removeNextSong();
+        Song song = this.removeNextSong();
         this.addSong(song);
     }
 
     @Override
     public final boolean equals(Object obj) {
-        boolean equal = obj == this;
+        // An object is equal to itself.
+        if (obj == this) {
+            return true;
+        }
 
-        if (!equal && obj instanceof Playlist other) {
-            int length = this.size();
-            equal = length == other.size();
+        // A playlist cannot equal null.
+        if (obj == null) {
+            return false;
+        }
 
-            if (equal) {
-                for (int i = 0; i < length; i++) {
-                    String song = this.removeNextSong();
-                    String otherSong = other.removeNextSong();
+        // The other object must be a playlist.
+        if (!(obj instanceof Playlist)) {
+            return false;
+        }
 
-                    if (!song.equals(otherSong)) {
-                        equal = false;
-                    }
+        // Treat obj as a playlist so we can use its methods.
+        Playlist otherPlaylist = (Playlist) obj;
 
-                    this.addSong(song);
-                    other.addSong(otherSong);
-                }
+        // Equal playlists must have the same number of songs.
+        if (this.size() != otherPlaylist.size()) {
+            return false;
+        }
+
+        // Assume the songs match until we find a difference.
+        boolean equal = true;
+        int length = this.size();
+
+        // Finish the loop to restore both playlists' original order.
+        for (int i = 0; i < length; i++) {
+            Song song = this.removeNextSong();
+            Song otherSong = otherPlaylist.removeNextSong();
+
+            if (!song.equals(otherSong)) {
+                equal = false;
             }
+
+            this.addSong(song);
+            otherPlaylist.addSong(otherSong);
         }
 
         return equal;
@@ -56,13 +82,12 @@ public abstract class PlaylistSecondary implements Playlist {
 
     @Override
     public final int hashCode() {
-        final int multiplier = 31;
         int result = 1;
         int length = this.size();
 
         for (int i = 0; i < length; i++) {
-            String song = this.removeNextSong();
-            result = multiplier * result + song.hashCode();
+            Song song = this.removeNextSong();
+            result = HASH_MULTIPLIER * result + song.hashCode();
             this.addSong(song);
         }
 
@@ -71,21 +96,22 @@ public abstract class PlaylistSecondary implements Playlist {
 
     @Override
     public final String toString() {
-        StringBuilder result = new StringBuilder("<");
+        String result = "<";
         int length = this.size();
 
         for (int i = 0; i < length; i++) {
-            String song = this.removeNextSong();
+            Song song = this.removeNextSong();
 
             if (i > 0) {
-                result.append(", ");
+                result = result + ", ";
             }
-            result.append(song);
+            result = result + song;
 
             this.addSong(song);
         }
 
-        result.append(">");
-        return result.toString();
+        result = result + ">";
+        return result;
     }
+
 }

@@ -3,10 +3,22 @@ import components.standard.Standard;
 /**
  * Playlist kernel component with primary methods.
  *
- * @mathmodel type PlaylistKernel is modeled by string of string
+ * <p>
+ * Each song is represented by a pair containing its title and artist. Both
+ * fields are not null strings; empty strings are permitted. No special syntax
+ * is required in either field. Songs are ordered with the next song first.
+ * Duplicates are permitted. Titles and artists are compared exactly, including
+ * capitalization.
+ * </p>
+ *
+ * @mathmodel <pre>
+ * type PlaylistKernel is modeled by string of
+ *     (title: string of character, artist: string of character)
+ * </pre>
  * @initially <pre>
  * this = <>
  * </pre>
+ *
  * @author Zaid Hayat
  */
 public interface PlaylistKernel extends Standard<Playlist> {
@@ -17,9 +29,14 @@ public interface PlaylistKernel extends Standard<Playlist> {
      * @param song
      *            the song title to add
      * @updates this
-     * @ensures this = #this * <song>
+     * @requires <pre>
+     * song /= null and
+     * song.title() /= null and
+     * song.artist() /= null
+     * </pre>
+     * @ensures this = #this * <(song.title(), song.artist())>
      */
-    void addSong(String song);
+    void addSong(Song song);
 
     /**
      * Removes and returns the first song in this playlist.
@@ -27,9 +44,12 @@ public interface PlaylistKernel extends Standard<Playlist> {
      * @return the first song
      * @updates this
      * @requires this /= <>
-     * @ensures #this = <removeNextSong> * this
+     * @ensures <pre>
+     * removeNextSong /= null and
+     * #this = <(removeNextSong.title(), removeNextSong.artist())> * this
+     * </pre>
      */
-    String removeNextSong();
+    Song removeNextSong();
 
     /**
      * Reports the number of songs in this playlist.
