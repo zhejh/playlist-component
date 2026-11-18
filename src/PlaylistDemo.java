@@ -2,7 +2,7 @@ import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
 
 /**
- * demo of adding songs to a playlist.
+ * Demo of managing song requests with a playlist.
  *
  * @author Zaid Hayat
  */
@@ -24,19 +24,20 @@ public final class PlaylistDemo {
         SimpleWriter out = new SimpleWriter1L();
         Playlist requests = new Playlist1();
 
-        requests.addSong("Wet sand");
-        requests.addSong("Fine Again");
-        requests.addSong("Slow Cheetah");
+        requests.addSong(new Song("Wet Sand", "Red Hot Chili Peppers"));
+        requests.addSong(new Song("Fine Again", "Seether"));
+        requests.addSong(new Song("Slow Cheetah", "Red Hot Chili Peppers"));
 
         out.println("Requested songs: " + requests);
 
         requests.moveNextToEnd();
         out.println("After postponing the first request: " + requests);
 
-        String nextSong = requests.removeNextSong();
-        out.println("Selected to play: " + nextSong);
+        Song nextSong = requests.removeNextSong();
+        out.println("Selected to play: " + nextSong.title() + " - "
+                + nextSong.artist());
 
-        requests.addSong("Black");
+        requests.addSong(new Song("Black", "Pearl Jam"));
         out.println("After a new request: " + requests);
         out.println("Songs remaining: " + requests.size());
 

@@ -18,10 +18,12 @@ public final class FavoritePlaylist {
      */
     public FavoritePlaylist() {
         this.songs = new Playlist1();
-        this.songs.addSong("Outside - Staind");
-        this.songs.addSong("I Hate Everything About You - Three Days Grace");
-        this.songs.addSong("Californication - Red Hot Chili Peppers");
-        this.songs.addSong("Fine Again - Seether");
+        this.songs.addSong(new Song("Outside", "Staind"));
+        this.songs.addSong(
+                new Song("I Hate Everything About You", "Three Days Grace"));
+        this.songs
+                .addSong(new Song("Californication", "Red Hot Chili Peppers"));
+        this.songs.addSong(new Song("Fine Again", "Seether"));
     }
 
     /**
@@ -32,8 +34,8 @@ public final class FavoritePlaylist {
         int count = this.songs.size();
 
         for (int i = 0; i < count; i++) {
-            String song = this.songs.removeNextSong();
-            out.println(song);
+            Song song = this.songs.removeNextSong();
+            out.println(song.title() + " - " + song.artist());
             this.songs.addSong(song);
         }
 
