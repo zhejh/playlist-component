@@ -76,12 +76,12 @@ a few sentences per question would be ideal.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-I understand software development better now. At the start, I struggled with figuring out how many test cases I needed and understanding abstract classes. Working through the portfolio project helped me understand both through trial and error.
+I understand software development better now. At the start, I struggled with figuring out which test cases I needed and understanding abstract classes. Working through the portfolio project helped me understand both through trial and error. Getting feedback on my first submission showed me that I still had a lot to learn and helped me improve the data model, documentation, and tests.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-Before starting, I felt like I had gaps even in the basics, especially writing test cases, understanding abstract classes and interfaces, and writing contracts. I worked on these by going through the code step by step, and fixing mistakes as I tested. Applying these ideas to my own component helped me understand how they fit together.
+Before starting, I felt like I had gaps even in the basics, especially writing test cases, understanding abstract classes and interfaces, and writing contracts. I worked on these by going through the code step by step, and fixing mistakes as I tested. Regarding testing, I learned that the number of tests alone does not tell me how well my code is tested. Choosing meaningful cases helped me organize my tests and understand what each one was checking.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
@@ -95,7 +95,8 @@ I would say I’m still in a gray area. I don’t necessarily like software deve
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-I developed my problem solving skills by figuring out what was wrong with my code and what the Checkstyle warnings meant. Fixing one issue only to have ten more appear definitely tested my patience. It helped me practice working through problems one at a time instead of trying to fix everything at once.
+I developed my problem solving skills by figuring out what was wrong with my code and what the Checkstyle warnings meant. Fixing one issue only to have ten more appear definitely tested my patience. It helped me practice working through problems one at a time instead of trying to fix everything at once. Although we had been using GitHub Desktop with our project partners, managing my own repository helped me get more comfortable with commits and branches. I now have a better understanding of how to organize changes for future projects.
+
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
